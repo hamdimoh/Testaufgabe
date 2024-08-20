@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Testaufgaben_Entwicklung.Models.Club>
+
+<h2>Clubs by League</h2>
+
+<form method="get">
+    <div class="form-group">
+        <label for="yearEstablished">Year Established:</label>
+        <input type="number" name="yearEstablished" id="yearEstablished" value="@(ViewData[" yearEstablished"] ?? 0)" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Club Name</th>
+            <th>Year Established</th>
+            <th>League</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var club in Model)
+        {
+            <tr>
+                <td>@club.ClubName</td>
+                <td>@club.YearEstablished</td>
+                <td>@club.League</td>
+                <td>@club.Country</td>
+            </tr>
+        }
+    </tbody>
+</table>

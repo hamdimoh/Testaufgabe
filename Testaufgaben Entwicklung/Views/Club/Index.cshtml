@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Testaufgaben_Entwicklung.Models.Club>
+
+<h2>Clubs</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Club Name</th>
+            <th>Year Established</th>
+            <th>League</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var club in Model)
+        {
+            <tr>
+                <td>@club.ClubName</td>
+                <td>@club.YearEstablished</td>
+                <td>@club.League</td>
+                <td>@club.Country</td>
+            </tr>
+        }
+    </tbody>
+</table>
